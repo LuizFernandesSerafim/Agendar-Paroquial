@@ -51,6 +51,55 @@ a {
     height: auto;
 }
 
+/* Estilização especifica para menu de navegação  ∨ */
+#menu-principal {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1a2744;
+    z-index: 100;
+}
+
+#menu-principal ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 15px;
+    color: #D8B878;
+}
+
+#menu-principal a {
+    color: #D8B878;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 8px 15px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+#menu-principal a i {
+    font-size: 16px;
+}
+
+#menu-principal a:hover {
+    background-color: #D8B878;
+    color: #1a2744;
+}
+
+#menu-principal a.pagina-ativa {
+    background-color: #D8B878;
+    color: #1A2744;
+}
+
+/* Estilização especifica para Pagina Index  ∨ */
 /* Estilização especifica para a parte do eventos do dia  ∨ */
 #eventosdia {
     flex-basis: 40%;
@@ -150,6 +199,9 @@ a {
     column-gap: 10px;
     row-gap: 16px;
 }
+.nome-curto {
+    display: none;
+}
 
 .dia {
     border: #D8B878 1px solid;
@@ -233,49 +285,81 @@ a {
     border: 1px solid #F5F5F0;
 }
 
-/* Estilização especifica para menu de navegação  ∨ */
-#menu-principal {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #1a2744;
-    z-index: 100;
+/* Estilização especifica para Responsividade  ∨ */
+@media (max-width: 768px) {
+    #cabecalho h1 {
+    font-size: 30px;
 }
 
-#menu-principal ul {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    list-style: none;
-    margin: 0;
-    padding: 15px;
-    color: #D8B878;
+#cabecalho img {
+    width: 65px;
+}
+
+#eventosdia {
+    padding: 12px;
+}
+
+#informacoes-liturgicas,
+#programacao-paroquial,
+.descricao-evento {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.detalhe-liturgico {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+    
+    #pag-calendario {
+        flex-direction: column;
+    }
+
+    #eventosdia,
+    #calendario {
+        flex-basis: auto;
+        width: 100%;
+        min-width: 0;
+    }
+
+    #semana,
+    #mes {
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+        column-gap: 4px;
+    }
+
+   .dia,
+.dia-semana {
+    padding: 5px;
+    font-size: 12px;
+    text-align: center;
+}
+
+
+.dia {
+    min-height: 45px;
+    padding: 5px;
+}
+
+.hoje .dia-mes {
+    width: 25px;
+    height: 25px;
+}
+
+    .nome-completo {
+    display: none;
+}
+
+.nome-curto {
+    display: inline;
 }
 
 #menu-principal a {
-    color: #D8B878;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    padding: 8px 15px;
-    border-radius: 10px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2px;
+    font-size: 0;
 }
+
 #menu-principal a i {
     font-size: 16px;
 }
 
-#menu-principal a:hover {
-    background-color: #D8B878;
-    color: #1a2744;
-}
-
-#menu-principal a.pagina-ativa {
-    background-color: #D8B878;
-    color: #1A2744;
 }
